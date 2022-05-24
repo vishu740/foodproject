@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>api call</title>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-lg-4">
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" id="imgg"  alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="titie">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary" >Go somewhere</a>
+              <!-- <button>Click me</button> -->
+            </div>
+          </div>     
+    </div>
+
+    <div class="col-lg-4">
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" id="imgg1"  alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title1" id="titie1"></h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>     
+    </div>
+    <div class="col-lg-4">
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" id="imgg2" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="titie2">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="" class="btn btn-primary" id="urllink">Go somewhere</a>
+            </div>
+          </div>     
+    </div>
+    </div>
+</div>
+
+
+
+     
+      <script>
+//         const element=document.getElementById("urllink")
+//         console.log(element)
+//         element.addEventListener("click", myFunction);
+
+//         function myFunction() {
+//   document.getElementById("demo").innerHTML = "Hello World";
+//   alert(mydata)
+//   console.log(actualdata())
+// }
+
+          fetch("https://newsapi.org/v2/everything?q=tesla&from=2022-04-20&sortBy=publishedAt&apiKey=dd075c212cbe4de6956936a2622a1596").then((apidata)=>{
+              console.log(apidata);
+            return apidata.json();
+         }).then((actualdata)=>{
+ console.log(actualdata);
+
+           var demo = actualdata.articles[1].urlToImage;
+           var urllink = actualdata.articles[1].url;
+          //  console.log(urllink)
+          
+           var demo1 = actualdata.articles[2].urlToImage;
+           var demo2 = actualdata.articles[3].urlToImage;
+          //  console.log(demo)
+           
+           var mydata = actualdata.articles[1].title;
+           var mydata1 = actualdata.articles[2].title;
+           var mydata2 = actualdata.articles[3].title;
+           document.getElementById("titie").innerHTML=mydata;
+           document.getElementById("titie1").innerHTML=mydata1;
+           document.getElementById("titie2").innerHTML=mydata2;
+           document.getElementById("imgg").src=demo;
+           document.getElementById("imgg1").src=demo1;
+           document.getElementById("imgg2").src=demo2;
+           document.getElementById("urllinkk")=urllink;
+
+         }).catch((error)=>{
+             console.log(error)
+         });
+
+         
+
+
+
+      </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

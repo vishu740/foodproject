@@ -82,4 +82,4 @@ const foot=`
   </footer>
 </div>`
 
-document.getElementById("lastfoot").innerHTML=foot;
+document.getElementById("lastfoot").innerHTML=foot;s

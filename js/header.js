@@ -1,3 +1,7 @@
+
+
+
+
 const dataCheck=` <div class="top-header d-none d-lg-block">
 <div class=" text-white d-flex justify-content-between ">
   <ul class="header-socile ml-4 d-block d-none d-lg-block  ">
@@ -53,18 +57,18 @@ const dataCheck=` <div class="top-header d-none d-lg-block">
 
 
   </div>
-  <div class="col-lg-2 d-none d-lg-block">
-    <div class=" mt-2 d-flex justify-content-center loginin">
-      <div class="login d-none d-lg-block">
-        <img src="./images/login.svg">
+  <div class="col-lg-2 d-none d-lg-block" >
+    <div class="mt-2 d-flex justify-content-center loginin" >
+      <div class="login d-none d-lg-block" id="showlog"  >
+        <img src="./images/login.svg"  >
       </div>
-      <span class="logincenter d-none d-lg-block">Login</span>
+      <span class="logincenter d-none d-lg-block"  id="showlog1">Login</span>
     </div>
 
   </div>
   <div class="col-lg-2 d-none d-lg-block">
     <div class=" mt-2 d-flex justify-content-center">
-      <a href="#" class="buttoncard"> <i class="fa fa-shopping-cart mr-3" aria-hidden="true"></i>My Cart</a>
+      <a href="#" class="buttoncard" onclick="openNav()"> <i class="fa fa-shopping-cart mr-3" aria-hidden="true"></i>My Cart</a>
     </div>
 
   </div>
@@ -90,10 +94,10 @@ const dataCheck=` <div class="top-header d-none d-lg-block">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav m-auto flex-wrap justify-content-center">
           <li class="nav-item ">
-            <a class="nav-link hovernav" href="#">CHICKEN </a>
+            <a class="nav-link hovernav" href="chicken.html">CHICKEN </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hovernav" href="#">MUTTON</a>
+            <a class="nav-link hovernav" href="mutton.html">MUTTON</a>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -110,7 +114,7 @@ const dataCheck=` <div class="top-header d-none d-lg-block">
             <a class="nav-link hovernav" href="#">PORK</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hovernav" href="#">FISH & SEA FOOD</a>
+            <a class="nav-link hovernav" href="fish.html">FISH & SEA FOOD</a>
           </li>
           <li class="nav-item">
             <a class="nav-link hovernav" href="#">BACON,SAUSAGE & MORE </a>
@@ -148,6 +152,17 @@ const dataCheck=` <div class="top-header d-none d-lg-block">
   </div>
 </div>
 </div>`;
+
+$(document).ready(function(){
+  $("#showlog").click(function(){
+    // alert("hello")
+    $(".loginpop").show(6000);
+  });
+  $("#showlog1").click(function(){
+    //  alert("hello")
+    $(".loginpop").show(6000);
+  });
+});
 document.getElementById("headerd").innerHTML=dataCheck;
 
 var nav = document.getElementById('navigation');
